@@ -1,0 +1,38 @@
+<div class="container">
+
+<h2>Farkle Main</h2>
+
+<div class="bs-players">
+  <form role="form">
+    <div class="form-group" ng-repeat="player in players">
+      <input  
+          type="text" 
+          class="form-control input-lg" 
+          ng-model="player.name" 
+          placeholder="{{player.placeholder}}"
+          autofocus />
+    </div>
+    <div class="form-group">
+      <input 
+          type="button" 
+          class="btn btn-primary form-control btn-lg input-lg"
+          ng-click="addPlayer()" 
+          value="Add Player" />
+    </div>
+    <div class="form-group">
+      <input 
+          type="button" 
+          class="btn btn-primary form-control btn-lg input-lg" 
+          ng-click="removePlayer()" 
+          value="Remove Player" />
+    </div>
+    <div class="form-group">
+      <input 
+          type="submit" 
+          class="btn btn-primary form-control btn-lg input-lg" 
+          ng-click="submit()" />
+    </div>
+  </form>
+</div>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+
+  <h2>{{players[game.turn].name}}'s Turn</h2>
+
+  <form role="form">
+ 
+    <label 
+        ng-repeat="player in players" 
+        class="score btn btn-sm"
+        ng-class="player.btn">
+        {{player.name}}: {{player.score}}
+    </label>
+
+    <div class="form-group">
+      <input 
+          id="enter-score"
+          type="number"
+          class="form-control input-lg"
+          ng-model="score"
+          autofocus
+          placeholder="Enter {{players[game.turn].name}}'s score..." />
+    </div>
+    <div class="form-group">
+      <input
+          type="submit"
+          class="form-control btn btn-primary input-lg btn-lg" 
+          ng-click="submit()" />
+    </div>
+  </form>
+</div>

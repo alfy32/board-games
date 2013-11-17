@@ -1,0 +1,19 @@
+
+h2 {
+  text-align: center;
+}
+
+.bs-players:before {
+  content: "Players";
+  font-size: 12px;
+  font-weight: bold;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.score {
+  display: inline-block;
+  margin: 10px;
+  margin-left: 0px;
+}
