@@ -1,6 +1,8 @@
 angular.module('board-games').controller('farkleCtrl',
-  function ($scope, game) {
-    
+  function ($scope, game, nav) {
+
+    nav.makeActive('Farkle');
+        
     $scope.players = game.players;
     game.turn = 0;
 

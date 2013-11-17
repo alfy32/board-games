@@ -35,6 +35,19 @@ var nav = [
 
 angular.module('board-games').factory('nav',
   function () {
-    return nav;
+
+    function makeActive(name) {
+      for(var i in nav) {
+        if(nav[i].name == name)
+          nav[i].class = 'active';
+        else
+          nav[i].class = '';
+      }
+    }
+
+    return {
+      nav: nav,
+      makeActive: makeActive
+    };
   }
 );

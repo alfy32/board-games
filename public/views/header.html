@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav">
         <li 
             ng-repeat="item in nav" 
-            class="{{item.active}}" 
+            ng-class="item.class" 
             ng-show="item.show">
           <a href="#{{item.url}}">{{item.name}}</a>
         </li>
