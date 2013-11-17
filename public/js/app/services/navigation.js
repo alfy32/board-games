@@ -30,6 +30,30 @@ var nav = [
     url: '/farkle/win',
     ctrl: 'winCtrl',
     tmpl: 'views/farkle/win.html'
+  },
+  {
+    name: 'Generic',
+    class: '',
+    show: true,
+    url: '/generic',
+    ctrl: 'generic/mainCtrl',
+    tmpl: 'views/generic/generic.html'
+  },
+  {
+    name: 'enter-score',
+    class: '',
+    show: false,
+    url: '/generic/enter-score',
+    ctrl: 'generic/enterScoreCtrl',
+    tmpl: 'views/generic/enter-score.html'
+  },
+  {
+    name: 'win',
+    class: '',
+    show: false,
+    url: '/generic/win',
+    ctrl: 'generic/winCtrl',
+    tmpl: 'views/generic/win.html'
   }
 ];
 

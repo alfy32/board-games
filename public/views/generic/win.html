@@ -1,0 +1,11 @@
+<div class="container">
+
+  <h2>{{game.winner.name}} won!!!!!!</h2>
+
+  <div class="form-group" ng-repeat="player in players | orderBy:'score':true">
+    <label class="form-control btn btn-success btn-lg input-lg">
+      {{player.name}}: {{player.score}}
+    </label>
+  </div>
+  
+</div>
