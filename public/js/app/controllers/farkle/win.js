@@ -6,6 +6,10 @@ angular.module('board-games').controller('winCtrl',
     
     $scope.players = game.players;
     $scope.game = game;
-    
+
+    $scope.playAgain = function() {
+      game.reset();
+      window.location.href = '#/farkle';
+    }    
   }
 );

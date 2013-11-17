@@ -8,12 +8,10 @@ angular.module('board-games').controller('enterScoreCtrl',
     $scope.game = game;
     
     $scope.submit = function() {
-      $scope.players[game.turn].score += +$scope.score || 0;
+      game.addScore(+$scope.score || 0);
+      game.nextTurn();
 
-      if($scope.players[game.turn].score >=  $scope.game.winningScore)
-        $scope.players[game.turn].btn = 'btn-danger';
-
-      if(game.nextTurn() === 'win') {
+      if(game.over()) {
         window.location.href = '#/farkle/win';
       } else {
         $scope.score = '';

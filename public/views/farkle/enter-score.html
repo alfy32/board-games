@@ -7,7 +7,7 @@
     <label 
         ng-repeat="player in players" 
         class="score btn btn-sm"
-        ng-class="player.btn">
+        ng-class="{'btn-danger': player.winning, 'btn-success': !player.winning}">
         {{player.name}}: {{player.score}}
     </label>
 

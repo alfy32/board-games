@@ -1,32 +1,61 @@
 angular.module('board-games').controller('farkleCtrl',
   function ($scope, game, nav) {
 
-    nav.makeActive('Farkle');
+    $scope.nameOfGame = "Farkle";
+    nav.makeActive($scope.nameOfGame);
         
     $scope.players = game.players;
     game.turn = 0;
 
-    $scope.addPlayer = function() {
-      $scope.players.push({
-        placeholder: 'Player ' + ($scope.players.length+1),
-        btn: 'btn-success',
-        name: '',
-        score: 0
-      });
-    };
+    $scope.buttons = getButtons();
 
     if(!$scope.players.length) {
-      $scope.addPlayer();
-      $scope.addPlayer();
+      game.addPlayer();
+      game.addPlayer();
     }
 
-    $scope.removePlayer = function() {
+    function addPlayer() {
+      game.addPlayer();
+    };
+
+    function removePlayer () {
       $scope.players.pop();
     };
 
-    $scope.submit = function() {
+    function reset () {
+      game.reset();
+      console.log('reset')
+    };
+
+    function play () {
       window.location.href = '#/farkle/enter-score';
     };
-   
+    
+    function getButtons() {
+      return [
+        {
+          type: "button",
+          click: addPlayer,
+          label: "Add Player"
+        },
+        {
+          type: "button",
+          click: removePlayer,
+          label: "Remove Player"
+        },
+        {
+          type: "button",
+          click: reset,
+          label: "Reset"
+        },
+        {
+          type: "submit",
+          click: play,
+          label: "Play"
+        }
+      ];
+    }
+
+
   }
 );
