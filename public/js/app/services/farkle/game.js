@@ -23,6 +23,7 @@ angular.module('board-games').factory('game',
     }
 
     function over() {
+      findWinner();
       return game.players[game.turn].winning;
     }
 
